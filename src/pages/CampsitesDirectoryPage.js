@@ -9,8 +9,7 @@ const CampsitesDirectoryPage = () => {
     const selectedCampsite = selectCampsiteById(campsiteId);
 
     return (
-        <Container>
-            
+        <Container> 
             <Row>
                 <Col sm='5' md='7'>
                     <CampsitesList setCampsiteId = {setCampsiteId} />

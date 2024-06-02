@@ -11,8 +11,9 @@ export const selectAllCampsites = () => {
 
 //function takes an argument of id and returns the first object in the CAMPSITES array with a matching id
 export const selectCampsiteById = (id) => {
-    return CAMPSITES.find((campsite) => campsite.id === id);
-}
+    //the parseInt() - parses the id variable to an integer
+    return CAMPSITES.find((campsite) => campsite.id === parseInt(id));
+};
 
 //the function returns the first item in the CAMPSITES array with a featured property set to true
 export const selectFeaturedCampsite = () => {

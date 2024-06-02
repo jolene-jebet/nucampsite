@@ -13,3 +13,8 @@ export const selectAllCampsites = () => {
 export const selectCampsiteById = (id) => {
     return CAMPSITES.find((campsite) => campsite.id === id);
 }
+
+//the function returns the first item in the CAMPSITES array with a featured property set to true
+export const selectFeaturedCampsite = () => {
+    return CAMPSITES.find((campsite) => campsite.featured);
+}

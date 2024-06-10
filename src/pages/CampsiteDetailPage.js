@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { selectCampsiteById } from '../features/campsites/campsitesSlice';
 import CampsiteDetail from '../features/campsites/CampsiteDetail';
 import SubHeader from '../components/SubHeader';
+import CommentsList from '../features/comments/CommentsList';
 
 function CampsiteDetailPage (){
     //destructuring a variable,campsiteId, from a call to the useParams function
@@ -15,6 +16,7 @@ function CampsiteDetailPage (){
             <SubHeader current={campsite.name} detail={true} />
             <Row>
                 <CampsiteDetail campsite={campsite} />
+                <CommentsList campsiteId={campsiteId} />
             </Row>
         </Container>
     );

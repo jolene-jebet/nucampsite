@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated} from 'react-spring';
 
 function AnimatedDisplayCard ({ item }){
     const { image, name, description } = item ;
@@ -20,7 +20,7 @@ function AnimatedDisplayCard ({ item }){
     }, []);
 
     return(
-        <animatedStyle.div style={animatedStyle}>
+        <animated.div style={animatedStyle}>
             <Card>
                 <CardImg src={image} alt={name} />
                 <CardBody>
@@ -28,7 +28,7 @@ function AnimatedDisplayCard ({ item }){
                     <CardText>{description}</CardText>
                 </CardBody>
             </Card> 
-        </animatedStyle.div>
+        </animated.div>
         
     );
 }

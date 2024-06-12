@@ -10,10 +10,13 @@ const DisplayList = () => {
     return (
         <Row>
             {items.map((item, idx) => {
-                return (
-                    <Col md className='m-1' key={idx}>
-                        <AnimatedDisplayCard item={item} />
-                    </Col>
+                 return (
+                    // a conditional rendering to handle the case if any of the selectors used return undefined(or any other false value)
+                    item && (
+                        <Col md className='m-1' key={idx}>
+                            <AnimatedDisplayCard item={item} />
+                        </Col>
+                    )
                 );
             })}
         </Row>

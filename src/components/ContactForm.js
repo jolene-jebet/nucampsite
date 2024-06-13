@@ -2,65 +2,108 @@ import { Button, Label, Col, FormGroup } from "reactstrap";
 import { Formik, Field, Form  } from "formik";
 
 const ContactForm = () => {
-    <Formik
-        // first bracket is for the prop then second bracket is for js because its an object w 7 diff propertied 
-        initialValues = {{
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: '',
-            agree: false,
-            contactType: 'By Phone',
-            feedback: ''
-        }}
-    >
-        <Form>
-                <FormGroup row>
-                    <Label htmlFor='firstName' md='2'>
-                        First Name
-                    </Label>
-                    <Col md='10'>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label htmlFor='lastName' md='2'>
-                        Last Name
-                    </Label>
-                    <Col md='10'>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label htmlFor='phoneNum' md='2'>
-                        Phone
-                    </Label>
-                    <Col md='10'>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label htmlFor='email' md='2'>
-                        Email
-                    </Label>
-                    <Col md='10'>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label check md={{size : 4, offset: 2}}>
-                        May we contact you?
-                    </Label>
-                    <Col md='4'>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label htmlFor='feedback' md='2'>
-                        Your Feedback
-                    </Label>
-                    <Col md='10'>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                </FormGroup>
-            </Form>
-    </Formik>
+    return(
+            <Formik
+            // first bracket is for the prop then second bracket is for js because its an object w 7 diff propertied 
+            initialValues = {{
+                firstName: '',
+                lastName: '',
+                phoneNum: '',
+                email: '',
+                agree: false,
+                contactType: 'By Phone',
+                feedback: ''
+            }}
+            >
+            <Form>
+                    <FormGroup row>
+                        <Label htmlFor='firstName' md='2'>
+                            First Name
+                        </Label>
+                        <Col md='10'>
+                            <Field 
+                                className='form-control'
+                                name='firstName'
+                                placeholder='First Name' 
+                            />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label htmlFor='lastName' md='2'>
+                            Last Name
+                        </Label>
+                        <Col md='10'>
+                            <Field 
+                                className='form-control'
+                                name='lastName'
+                                placeholder='Last Name' 
+                            />
+                            </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label htmlFor='phoneNum' md='2'>
+                            Phone
+                        </Label>
+                        <Col md='10'>
+                            <Field 
+                                className='form-control'
+                                name='phoneNum'
+                                placeholder='Phone number' 
+                            />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label htmlFor='email' md='2'>
+                            Email
+                        </Label>
+                        <Col md='10'>
+                        <Field 
+                            className='form-control'
+                            name='email'
+                            placeholder='Email' 
+                        />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label check md={{size : 4, offset: 2}}>
+                            <Field
+                                name='agree'
+                                type='checkbox'
+                                className='form-check-input'
+                                />{' '}
+                            May we contact you?
+                        </Label>
+                        <Col md='4'>
+                            <Field 
+                                className = 'form-control'
+                                name='contactType'
+                                // this will be a select menu and not text-field
+                                as='select'
+                            >
+                                <option>By Phone</option>
+                                <option>By Email</option>  
+                            </Field>
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label htmlFor='feedback' md='2'>
+                            Your Feedback
+                        </Label>
+                        <Col md='10'>
+                        <Field 
+                                className='form-control'
+                                name='feedback'
+                                as='textarea'
+                                rows='12' 
+                            />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                    </FormGroup>
+                </Form>
+        </Formik>
+    );
+    
 }
 
 export default ContactForm;
